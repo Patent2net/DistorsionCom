@@ -1,3 +1,7 @@
+def get_lang_detector(nlp, name):
+    return LanguageDetector()
+    
+
 def isPartner(url, listPart):
   # pour comparer les urls on les découpe sur la partie du nom serveur
   url = url.strip()
