@@ -1,6 +1,16 @@
-def get_lang_detector(nlp, name):
-    return LanguageDetector()
-    
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from PIL import Image
+from urllib import parse
+
+
+def makeImage(text):
+    wc = WordCloud(background_color="white", max_words=100,width=800, height=400)
+    wc.generate_from_frequencies(text)
+
+    plt.imshow(wc, interpolation="bilinear")
+    plt.axis("off")
+    plt.show()
 
 def isPartner(url, listPart):
   # pour comparer les urls on les découpe sur la partie du nom serveur
