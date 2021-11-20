@@ -1,4 +1,4 @@
-﻿ID;NAME;PREFIXES AS URL;INDEGREE;TOTAL KNOWN PAGES;CRAWLED PAGES;STATUS;LAST MODIFICATION DATE
+ID;NAME;PREFIXES AS URL;INDEGREE;TOTAL KNOWN PAGES;CRAWLED PAGES;STATUS;LAST MODIFICATION DATE
 1;Portcros-Parcnational.fr;http://portcros-parcnational.fr http://www.portcros-parcnational.fr https://portcros-parcnational.fr https://www.portcros-parcnational.fr;0;791;127;IN;2021-10-21T08:14:15.536Z
 2;Browsehappy.com;http://browsehappy.com http://www.browsehappy.com https://browsehappy.com https://www.browsehappy.com;1;1;0;DISCOVERED;2021-10-21T08:14:18.953Z
 3;fr-fr.Facebook.com /pages;http://fr-fr.facebook.com/pages http://www.fr-fr.facebook.com/pages https://fr-fr.facebook.com/pages https://www.fr-fr.facebook.com/pages;1;1;0;DISCOVERED;2021-10-21T08:14:18.953Z
@@ -89,3 +89,4 @@
 88;Actavista.fr;http://actavista.fr http://www.actavista.fr https://actavista.fr https://www.actavista.fr;1;1;0;DISCOVERED;2021-10-21T08:21:55.382Z
 89;Association-Tremplin.org;http://association-tremplin.org http://www.association-tremplin.org https://association-tremplin.org https://www.association-tremplin.org;1;1;0;DISCOVERED;2021-10-21T08:21:55.382Z
 90;Sauvegardedesforetsvaroises.com;http://sauvegardedesforetsvaroises.com http://www.sauvegardedesforetsvaroises.com https://sauvegardedesforetsvaroises.com https://www.sauvegardedesforetsvaroises.com;1;1;0;DISCOVERED;2021-10-21T08:21:55.382Z
+
