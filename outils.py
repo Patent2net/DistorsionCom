@@ -1,16 +1,79 @@
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 from PIL import Image
-from urllib import parse
+from os import path
+from collections import Counter
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator, get_single_color_func
+from matplotlib.patches import Patch #NEW
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import cm, colors
 
 
-def makeImage(text):
-    wc = WordCloud(background_color="white", max_words=100,width=800, height=400)
-    wc.generate_from_frequencies(text)
+def Palette (cat):
+  """génère une palette de couleurs uniformément répartie dans la colormap ci dessous
+  en fonction du nombre placé en paramètre. D'autres colormap peuvent être choisies.
+  cf. https://matplotlib.org/stable/tutorials/colors/colormaps.html
+  la répartition se fait en excluant la première et la dernière valeur """
+  cmap = 'gist_rainbow'
 
-    plt.imshow(wc, interpolation="bilinear")
-    plt.axis("off")
-    plt.show()
+  x = np.linspace(0.0, 1.0, len(cat)+2) # 2 en plus pour les exclure.
+  rgb = cm.get_cmap(cmap)(x)[np.newaxis, :, :3]
+  palette = dict()
+  ind = 1 # on exclue la première et la dernière valeur
+  for cle in cat: # une cle une couleur
+    palette[cle] = rgb[0][ind] 
+    ind += 1 
+  return palette
+  
+def makeImage(text, palette):
+  default_color = 'grey'  # la couleur par défaut (si le mot pas présent dans
+                          # le dico color_to_words)
+  # Create a color function with single tone
+  grouped_color_func = SimpleGroupedColorFunc(color_to_words, default_color)
+
+  # Create a color function with multiple tones
+  # grouped_color_func = GroupedColorFunc(color_to_words, default_color)
+
+  wc = WordCloud(collocations=False, # vu qu'on additionne des textes...
+                 background_color="white", max_words=600, 
+                 normalize_plurals=False, # spacy l'a fait
+                 width=1400, height=600).generate(text)
+  plt.figure(figsize=(20, 15), facecolor=None)
+  # pour avoir la légende
+  legend = [Patch(facecolor=(colors.to_hex(palette [cle])), label=cle) for cle in palette.keys()] 
+ 
+  wc.recolor(color_func=grouped_color_func)
+  # plt.legend(handles=legend)
+
+  plt.imshow(wc)
+  # show
+  #plt.imshow(wc, interpolation="bilinear")
+  plt.axis("off")
+  plt.show()
+  
+def makeImage2(text, palette, leg):
+  # même fonction que ci-dessus mais qui prend un dico [mot] = occurrence (par ex. issu de Counter) et
+  # non un texte
+  default_color = 'grey'  # la couleur par défaut (si le mot pas présent dans
+                          # le dico color_to_words)
+  # Create a color function with single tone
+  grouped_color_func = SimpleGroupedColorFunc(color_to_words, default_color)
+
+  # Create a color function with multiple tones
+  # grouped_color_func = GroupedColorFunc(color_to_words, default_color)
+
+  wc = WordCloud(collocations=False, # vu qu'on additionne des textes...
+                 background_color="white", max_words=200,
+                 width=1400, height=600).generate_from_frequencies(text)
+  plt.figure(figsize=(20, 15), facecolor=None)
+  # pour avoir la légende
+  legend = [Patch(facecolor=(colors.to_hex(palette[cle])), label=cle) for cle in palette.keys()] 
+ 
+  wc.recolor(color_func=grouped_color_func)
+  if leg:
+    plt.legend(handles=legend)
+  plt.axis("off")
+  plt.imshow(wc)
+  
 
 def isPartner(url, listPart):
   # pour comparer les urls on les découpe sur la partie du nom serveur
