@@ -69,7 +69,17 @@ class GroupedColorFunc(object):
     def __call__(self, word, **kwargs):
         return self.get_color_func(word)(word, **kwargs)
         
-
+def clean(terme):
+  if terme.isalpha():
+    return True
+  elif '-' in terme and not terme.startswith('-'):
+    terme = terme.replace("-", "")
+    if terme.isalpha():
+      return True
+    else:
+      return False
+  else:
+    return False 
 
 def Palette (cat):
   """génère une palette de couleurs uniformément répartie dans la colormap ci dessous
@@ -87,7 +97,7 @@ def Palette (cat):
     ind += 1 
   return palette
   
-def makeImage(text, palette, color_to_words):
+def makeImage(text, palette, color_to_words, leg = True):
   default_color = 'grey'  # la couleur par défaut (si le mot pas présent dans
                           # le dico color_to_words)
   # Create a color function with single tone
@@ -102,7 +112,8 @@ def makeImage(text, palette, color_to_words):
                  width=1400, height=600).generate(text)
   plt.figure(figsize=(20, 15), facecolor=None)
   # pour avoir la légende
-  legend = [Patch(facecolor=(colors.to_hex(palette [cle])), label=cle) for cle in palette.keys()] 
+  if leg:
+    legend = [Patch(facecolor=(colors.to_hex(palette [cle])), label=cle) for cle in palette.keys()] 
  
   wc.recolor(color_func=grouped_color_func)
   # plt.legend(handles=legend)
