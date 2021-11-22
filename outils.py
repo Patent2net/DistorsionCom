@@ -81,6 +81,20 @@ def clean(terme):
   else:
     return False 
 
+def NettoieLabels (lab):
+  labels = []
+  for url in list(lab):
+    tempo = url
+    if 'http' in url:
+      tempo = parse.urlparse(url) # pour limiter la taille à la zone DNS
+      tempo = tempo[1].replace('www.', '')
+      tempo = tempo.replace('.com', '')
+      tempo = tempo.replace('.fr', '')
+      tempo = tempo.replace('.org', '')
+      tempo = tempo.replace('.blogspot', '')
+    labels.append(tempo)
+  return labels
+
 def Palette (cat):
   """génère une palette de couleurs uniformément répartie dans la colormap ci dessous
   en fonction du nombre placé en paramètre. D'autres colormap peuvent être choisies.
