@@ -1,0 +1,226 @@
+{
+    "parcs": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "année",
+            "juillet",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    },
+    "organisations": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "année",
+            "juillet",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    },
+    "oTourism": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "année",
+            "juillet",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    },
+    "Services": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "année",
+            "juillet",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    },
+    "Gouv": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "année",
+            "juillet",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    },
+    "Hebergement": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "année",
+            "juillet",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    },
+    "restauration": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "année",
+            "juillet",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    },
+    "locations": {
+        "ADJ": [
+            "français",
+            "tout",
+            "grand",
+            "différent",
+            "dernier"
+        ],
+        "VERB": [
+            "savoir",
+            "venir",
+            "suivre",
+            "avoir"
+        ],
+        "NOUN": [
+            "plan",
+            "juillet",
+            "année",
+            "actualité",
+            "espace",
+            "service",
+            "site",
+            "création",
+            "jour",
+            "art",
+            "eau"
+        ]
+    }
+}
