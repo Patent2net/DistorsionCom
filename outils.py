@@ -10,6 +10,22 @@ from urllib import parse as parse
 from bs4 import BeautifulSoup
 from bs4.element import Comment
 import urllib.request
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
+def myRequest (url):
+  retry_strategy = Retry(
+      total=3,
+      status_forcelist=[429, 500, 502, 503, 504],
+      method_whitelist=["HEAD", "GET", "OPTIONS"]
+  )
+  adapter = HTTPAdapter(max_retries=retry_strategy)
+  http = requests.Session()
+  http.mount("https://", adapter)
+  http.mount("http://", adapter)
+
+  response = http.get(url, timeout =5,verify=False)
+  return response
 
 def tag_visible(element):
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
