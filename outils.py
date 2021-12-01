@@ -10,6 +10,7 @@ from urllib import parse as parse
 from bs4 import BeautifulSoup
 from bs4.element import Comment
 import urllib.request
+import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
@@ -24,7 +25,7 @@ def myRequest (url):
   http.mount("https://", adapter)
   http.mount("http://", adapter)
 
-  response = http.get(url, timeout =5,verify=False)
+  response = http.get(url, timeout = 5,verify=False)
   return response
 
 def tag_visible(element):
